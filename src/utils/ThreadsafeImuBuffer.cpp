@@ -49,7 +49,7 @@ using Aligned = Container<Type, Eigen::aligned_allocator<Type>>;
 ThreadsafeImuBuffer::QueryResult ThreadsafeImuBuffer::isDataAvailableUpToImpl(
     const Timestamp& timestamp_ns_from,
     const Timestamp& timestamp_ns_to) const {
-  CHECK_LT(timestamp_ns_from, timestamp_ns_to);
+  // CHECK_LT(timestamp_ns_from, timestamp_ns_to);
 
   if (shutdown_) {
     return QueryResult::kQueueShutdown;

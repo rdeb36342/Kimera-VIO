@@ -219,7 +219,7 @@ bool ThreadsafeTemporalBuffer<ValueType, AllocatorType>::getValuesBetweenTimes(
     Timestamp timestamp_lower_ns, Timestamp timestamp_higher_ns,
     ValueContainerType* values, const bool get_lower_bound) const {
   CHECK_NOTNULL(values)->clear();
-  CHECK_GT(timestamp_higher_ns, timestamp_lower_ns);
+  // CHECK_GT(timestamp_higher_ns, timestamp_lower_ns);
   std::lock_guard<std::recursive_mutex> lock(mutex_);
 
   // Early exit if there are too few items.

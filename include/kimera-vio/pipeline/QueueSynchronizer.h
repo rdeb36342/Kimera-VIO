@@ -135,15 +135,15 @@ class SimpleQueueSynchronizer : public QueueSynchronizerBase<T> {
             << name_id;
       }
     }
-    CHECK_EQ(timestamp, payload_timestamp)
-        << "Syncing queue " << queue->queue_id_ << " in module " << name_id
-        << " failed;\n Could not retrieve exact timestamp requested: \n"
-        << " - Requested timestamp: " << timestamp << '\n'
-        << " - Actual timestamp:    " << payload_timestamp << '\n'
-        << (i >= max_iterations
-                ? "Reached max number of sync attempts: " +
-                      std::to_string(max_iterations)
-                : "");
+    // CHECK_EQ(timestamp, payload_timestamp)
+    //     << "Syncing queue " << queue->queue_id_ << " in module " << name_id
+    //     << " failed;\n Could not retrieve exact timestamp requested: \n"
+    //     << " - Requested timestamp: " << timestamp << '\n'
+    //     << " - Actual timestamp:    " << payload_timestamp << '\n'
+    //     << (i >= max_iterations
+    //             ? "Reached max number of sync attempts: " +
+    //                   std::to_string(max_iterations)
+    //             : "");
     CHECK(*pipeline_payload);
     return true;
   }

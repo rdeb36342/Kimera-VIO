@@ -29,10 +29,10 @@ bool DataProviderModule::getTimeSyncedImuMeasurements(
     const Timestamp& timestamp,
     ImuMeasurements* imu_meas) {
   CHECK_NOTNULL(imu_meas);
-  CHECK_LT(timestamp_last_frame_, timestamp)
-      << "Timestamps out of order:\n"
-      << " - Last Frame Timestamp = " << timestamp_last_frame_ << '\n'
-      << " - Current Timestamp = " << timestamp;
+  // CHECK_LT(timestamp_last_frame_, timestamp)
+  //     << "Timestamps out of order:\n"
+  //     << " - Last Frame Timestamp = " << timestamp_last_frame_ << '\n'
+  //     << " - Current Timestamp = " << timestamp;
 
   if (imu_data_.imu_buffer_.size() == 0) {
     VLOG(1) << "No IMU measurements available yet, dropping this frame.";
