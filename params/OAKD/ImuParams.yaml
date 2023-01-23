@@ -1,0 +1,31 @@
+%YAML:1.0
+# Type of IMU preintegration:
+# 0: CombinedImuFactor
+# 1: ImuFactor
+imu_preintegration_type: 1
+
+# These are Euroc Dataset parameters
+# Sensor extrinsics wrt. the body-frame.
+T_BS:
+  cols: 4
+  rows: 4
+  data: [1.0, 0.0, 0.0, 0.0,
+         0.0, 1.0, 0.0, 0.0,
+         0.0, 0.0, 1.0, 0.0,
+         0.0, 0.0, 0.0, 1.0]
+rate_hz: 200
+
+# inertial sensor noise model parameters (static)
+# gyroscope_noise_density: 6.4190421491705540e-04
+# gyroscope_random_walk: 2.3553045282732546e-06
+# accelerometer_noise_density: 2.8138017235431984e-02
+# accelerometer_random_walk: 7.1952095806215616e-04
+gyroscope_noise_density: 0.0006569100713065966  
+gyroscope_random_walk: 1.9970298089443707e-05 
+accelerometer_noise_density: 0.003280133995022119 
+accelerometer_random_walk: 0.001009821356569499 
+
+# Extra parameters
+imu_integration_sigma: 1.0e-8
+imu_time_shift: 0.004772484328626431
+n_gravity: [0.0, 0.0, -9.81]
